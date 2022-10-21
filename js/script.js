@@ -17,12 +17,14 @@ function weatherApp() {
   let api;
 
   function onError(error) {
+    // Displays an error message if the getCurrentPosition() goes wrong or is declined by the user
     inputInfo.innerText = error.message;
     inputInfo.classList.add('error');
   }
 
   function displayData(data) {
     if (data.cod === '404') {
+      // if input.value is not accepted by the api
       inputInfo.classList.replace('pending', 'error');
       inputInfo.innerText = `${input.value} não é uma cidade válida.`;
     } else {
@@ -31,6 +33,7 @@ function weatherApp() {
       const { feels_like: feelsLike, humidity, temp } = data.main;
       let description;
 
+      // verification by the weather id to display the dynamic icon and text
       if (id >= 200 && id <= 232) {
         weatherIcon.src = './icons/storm.svg';
         description = 'Tempestade';
@@ -57,6 +60,7 @@ function weatherApp() {
       results.querySelector('.details .temp .num').innerText = Math.round(feelsLike);
       results.querySelector('.details .humidity .num').innerText = `${Math.round(humidity)}%`;
 
+      // resets the input screen and displays the results
       inputInfo.classList.remove('pending', 'error');
       input.value = '';
       wrapper.classList.add('active');
@@ -77,11 +81,13 @@ function weatherApp() {
   }
 
   function requestApi(city) {
+    // requests the API by the input.value
     api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${YOUR_API_KEY}`;
     fetchData(api);
   }
 
   function onSuccess(position) {
+    // requests the API by the geolocation of the device
     const { latitude: lat, longitude: lon } = position.coords;
     api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${YOUR_API_KEY}`;
     fetchData(api);
