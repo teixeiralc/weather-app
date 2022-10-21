@@ -1,6 +1,6 @@
 function weatherApp() {
   // Make sure to not share this file online, as it will contain your api key
-  // Certifique-se de não compartilhar este arquivo online, pois ele coneterá sua api key
+  // Certifique-se de não compartilhar este arquivo online, pois ele conterá sua api key
   const YOUR_API_KEY = 'paste here your openweather api key';
   const wrapper = document.querySelector('.wrapper');
 
