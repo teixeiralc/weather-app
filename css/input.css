@@ -1,0 +1,72 @@
+.info {
+  display: none;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.info.error {
+  display: block;
+  color: #721c24;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.info.pending {
+  display: block;
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border: 1px solid #bee5eb;
+}
+
+.input {
+  display: block;
+  margin: 20px 25px;
+  font-size: 1.125rem;
+}
+
+.wrapper.active .input {
+  display: none;
+}
+
+.input :where(input, button) {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.125rem;
+}
+
+.input input {
+  border: 1px solid #bfbfbf;
+  text-align: center;
+}
+
+.input input:is(:focus, :valid) {
+  border: 2px solid #43affc;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1px;
+  width: 100%;
+  background: #bfbfbf;
+  margin: 25px 0;
+}
+
+.separator::before {
+  content: 'Ou';
+  background-color: #fff;
+  font-size: 1rem;
+  padding: 0 15px;
+}
+
+.input button {
+  color: #fff;
+  background: #43affc;
+  cursor: pointer;
+}
