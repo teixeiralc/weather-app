@@ -1,7 +1,7 @@
 # Tempo Agora
 Uma aplicação web que exibe o tempo atual, temperatura, sensação térmica e umidade do ar consumindo a API <a href="https://openweathermap.org">OpenWeather</a>.
 
-<p>Para conseguir sua API Key basta criar uma conta em <a href="https://openweathermap.org">OpenWeatherMap.org</a>. Após isso, utilize-a na variável 'YOUR_API_KEY' em script.js</p>
+<p>Para conseguir sua API Key basta criar uma conta em <a href="https://openweathermap.org">OpenWeatherMap.org</a>. Após isso, utilize-a na variável 'YOUR_API_KEY' em script.js para que o código funcione.</p>
 
 ##
 
